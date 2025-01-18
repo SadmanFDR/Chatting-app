@@ -1,0 +1,48 @@
+.main_form{
+   @apply w-full h-screen py-[20px] px-[5px] sm:px-[10px] bg-green-400 flex justify-center items-center
+}
+.background_part{
+   @apply 2xl:w-[1220px] w-full  h-[700px] 2xl:h-[792px] xl:py-[62px] xl:pl-[62px] rounded-[50px] flex justify-center lg:justify-start items-center py-[20px] px-[20px]
+}
+.main_form .flex_item{
+   @apply w-full flex justify-center items-center h-[100vh] 
+}
+.main_form .flex_item .login_form{
+   @apply xl:w-[700px] lg:w-[600px] md:w-[500px] lg:pt-[40px] lg:pb-[64px] py-[30px]  rounded-[50px] backdrop-blur-[5px] border-[1px] border-[#fff] px-2 my-[20px]
+}
+.main_form .flex_item .login_form .headding{
+   @apply flex justify-center items-center flex-col
+}
+.main_form .flex_item .login_form h2{
+   @apply lg:text-[52px] md:text-[35px] text-[30px] text-white font-poppins font-bold text-center
+}
+.main_form .flex_item .login_form p{
+   @apply text-[15px] sm:text-[16px] text-white font-poppins font-medium text-center
+}
+.main_form .flex_item .login_form p a{
+   @apply text-[#62FFB4] font-bold
+}
+.main_form .flex_item .final_form{
+   @apply xl:pl-[66px] lg:pl-[50px] md:px-[40px] sm:pl-[30px] mt-[20px] lg:mt-[30px] flex flex-col pl-4 lg:pr-[70px] pr-2 xl:pr-[115px]  text-[18px] font-poppins font-semibold
+}
+.main_form .flex_item .final_form ul label{
+   @apply text-[16px] text-white
+}
+.main_form .flex_item .final_form input{
+   @apply mb-[20px] bg-transparent outline-none border-b-2 text-white
+}
+.main_form .flex_item .final_form .customErr{
+   @apply text-[14px] text-red-600
+}
+.main_form .flex_item .sign_up{
+   @apply text-[16px] text-black font-semibold  px-[60px] md:px-[100px] py-[12px] bg-[#62FFB4] rounded-lg mx-auto
+}
+.main_form .flex_item  .text_flex{
+   @apply flex gap-2 justify-center items-center mt-5 text-white xl:px-[67px]
+}
+.main_form .flex_item  .text_flex .list{
+   @apply text-[14px] sm:text-[16px] md:text-[17px]
+}
+.main_form .flex_item  .text_flex span{
+   @apply bg-white h-[2px] w-[80px] sm:w-[100px] md:w-[200px] 
+}

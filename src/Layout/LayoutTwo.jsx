@@ -4,16 +4,17 @@ import {  Outlet, useNavigate } from 'react-router-dom'
 import Navber from '../Container/Navber/Navber'
 import Footer from '../Container/Footer/Footer'
 import { useSelector } from 'react-redux'
+import Profile from '../Pages/Profile'
 
-const LayoutOne = () => {
+const LayoutTwo = () => {
 
-  const navigateL = useNavigate()
+  const navigate = useNavigate()
 
   const currentUser = useSelector((state)=>state.data.value)
 
  useEffect(()=>{
   if(currentUser == null){
-    navigateL('/login')
+    navigate('/login')
   }
  },[])
 
@@ -21,11 +22,11 @@ const LayoutOne = () => {
     <>
     <Navber/>
     <Outlet/>
-    <Home/>  
+    <Profile/>  
     <Footer/>  
 
     </>
   )
 }
 
-export default LayoutOne
+export default LayoutTwo

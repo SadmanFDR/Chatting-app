@@ -4,8 +4,10 @@ import {  Outlet, useNavigate } from 'react-router-dom'
 import Navber from '../Container/Navber/Navber'
 import Footer from '../Container/Footer/Footer'
 import { useSelector } from 'react-redux'
+import Massage from '../Pages/Massage'
+// import Profile from '../Pages/Profile'
 
-const LayoutOne = () => {
+const LayLayoutFout = () => {
 
   const navigateL = useNavigate()
 
@@ -21,11 +23,11 @@ const LayoutOne = () => {
     <>
     <Navber/>
     <Outlet/>
-    <Home/>  
+     <Massage/>
     <Footer/>  
 
     </>
   )
 }
 
-export default LayoutOne
+export default LayLayoutFout

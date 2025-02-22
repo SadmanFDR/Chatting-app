@@ -1,13 +1,11 @@
 import React from 'react'
-import Login from '../Container/Login/Login'
-import Register from '../Container/Register/Register'
+import UserProfile from '../Container/UserProfile/UserProfile'
 
 const Home = () => {
   return (
     <>
     
-    <Login/>
-    <Register/>
+    <UserProfile/>
     
     </>
   )

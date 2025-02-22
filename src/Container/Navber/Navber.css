@@ -1,0 +1,44 @@
+.main_nav{
+   @apply w-full py-1 md:py-[7px] bg-[#0e081f] dark:bg-white
+}
+.final_nav_items{
+   @apply flex justify-between items-center flex-wrap 
+}
+
+.main_button_bg{
+@apply flex justify-center items-center w-[50px] md:w-[55px] px-2 py-2 h-[50px] md:h-[55px] bg-gray-50 rounded-full transition-all duration-500 gap-4 sm:gap-5 border-black border-[1px] border-dotted
+}
+.bar_icons{
+   @apply text-[20px] md:text-[25px]  text-gray-700 
+}
+.openMenu{
+   @apply w-[270px] sm:w-[350px] rounded-lg shadow-[12px_15px_10px_-7px_rgba(59,_130,_246,_0.15)]
+}
+.closeMenu{
+   @apply overflow-hidden 
+}
+.closeMenu ul {
+   @apply mt-[-140px] mx-[-20px] transition-all duration-500 gap-4
+}
+.openMenu ul{
+   @apply mt-0 mx-0 transition-all duration-500
+}
+ .main_button_bg ul{
+   @apply flex gap-3 sm:gap-5
+}
+.main_button_bg ul li a{
+   @apply text-[20px] sm:text-[25px]  text-gray-700 font-bold
+}
+.main_button_bg ul li:hover p{
+   @apply  scale-[1]
+}
+.main_button_bg ul li p{
+   @apply absolute mt-[20px] px-2 py-1 bg-gray-200 text-gray-700 rounded-lg  scale-0 transition-all duration-500 mx-[-10px]
+}
+ 
+ul .dark_and_light:hover p{
+   @apply  scale-[1] opacity-[1]
+} 
+ul .dark_and_light p{
+  @apply absolute mt-[5px] sm:mt-[-45px]  px-3 py-1 bg-gray-200 text-gray-700 rounded-lg  scale-0 transition-all duration-500 sm:mx-[60px] opacity-0 border-black border-[1px] border-dotted
+}

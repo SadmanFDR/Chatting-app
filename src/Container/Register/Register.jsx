@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import './Register.css'
 import backBG from '..//../assets/Images/backBG.png'
 import leaf from '..//../assets/Images/leaf.png'
@@ -7,13 +6,16 @@ import { FaApple } from "react-icons/fa";
 import { AiFillGoogleSquare } from "react-icons/ai";
 import { getAuth, createUserWithEmailAndPassword ,sendEmailVerification ,updateProfile } from "firebase/auth";
 import { Bounce, toast } from 'react-toastify'
-
+import { useState, CSSProperties } from "react";
+import ClipLoader from "react-spinners/ClipLoader";
+import { FadeLoader } from 'react-spinners';
 
 const Register = () => {
 
 
   const auth = getAuth();
 
+  const [loding , setloding] = useState(false)
 
   const [formData , setformData] =useState({userName :"" , userEmail :"" , userPassword :"" })
   const [error , setError] = useState({userError:"" , emailError:"" , passwordError:""})
@@ -34,15 +36,19 @@ const navigate = useNavigate()
    
    
     else{
+      setloding(true)
       createUserWithEmailAndPassword(auth, formData.userEmail, formData.userPassword)
       .then((userCredential) => {
+
+        setloding(false)
+
         navigate('/login')
         // Signed up 
         const user = userCredential.user;          
           // ...--------------       email verification send
           sendEmailVerification(auth.currentUser)
     .then(() => {
-
+  
   
       // Email verification sent!
     toast.info('Email verification send!', {
@@ -150,20 +156,29 @@ const navigate = useNavigate()
                       <p className='customErr '>{error.passwordError}</p>
                       </ul>
                       <input type="password" onChange={(e)=>{setformData((prev)=>({...prev ,userPassword:e.target.value})), setError((prev)=>({...prev ,passwordError :""}))}} />
+                    
                     </div>
-              <div className="flex justify-center items-center w-full mt-6">
-              <button onClick={handelBut} className='sign_up'>Register</button>
+              <div className="flex flex-col gap-2 justify-center items-center w-full mt-6">
+                {
+                  loding?
+                  <button className='sign_up bg-green-200'>
+                <FadeLoader />
+              </button>
+                 :
+                 <button onClick={handelBut} className='sign_up'>Register</button>
+                }
+
               </div>
-              <ul className='text_flex'>
+              {/* <ul className='text_flex'>
                 <span></span>
                 <li className='list'>Or Sign Up with </li>
                 <span></span>
               </ul>
         
               <div className="icons flex  w-full justify-center items-center gap-2 mt-4 text-white">
-                  <AiFillGoogleSquare className='text-[45px] rounded-[50px]  '/>
-                  <FaApple className='text-[45px]  '/>
-                  </div>
+                  <AiFillGoogleSquare className='text-[45px] rounded-[50px] cursor-pointer'/>
+                  <FaApple className='text-[45px] cursor-pointer'/>
+                  </div> */}
 
 
                   </div>
